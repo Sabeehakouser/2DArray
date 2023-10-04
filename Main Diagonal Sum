@@ -1,0 +1,45 @@
+// Main Diagonal Sum
+/* Problem Description
+
+You are given a N X N integer matrix. You have to find the sum of all the main diagonal elements of A.
+
+Main diagonal of a matrix Ais a collection of elements A[i, j]such that i = j.
+
+
+Problem Constraints
+1 <= N<= 103
+
+-1000 <= A[i][j]<= 1000
+
+Input Format
+
+There are 1 lines in the input. First 2 integers R, C are the number of rows and columns. Then R * C integers follow corresponding to the rowwise numbers in the 2D array A.
+
+Output Format
+
+Return an integer denoting the sum of main diagonal elements. */
+import java.util.*;
+public class Main
+{
+    public static int sumDiagonal(int[][] matrix,int rows,int cols){
+        int sum=0;
+        for(int i=0;i<rows;i++){
+		    for(int j=0;j<cols;j++){
+		        if(i==j) sum+=matrix[i][j];
+		    }
+		}
+		return sum;
+    }
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int rows=sc.nextInt();
+		int cols=sc.nextInt();
+		int [][]matrix=new int[rows][cols];
+		for(int i=0;i<rows;i++){
+		    for(int j=0;j<cols;j++){
+		        matrix[i][j]=sc.nextInt();
+		    }
+		}
+		System.out.print(sumDiagonal(matrix,rows,cols));
+	}
+}
